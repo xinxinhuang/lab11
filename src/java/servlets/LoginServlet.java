@@ -46,7 +46,10 @@ public class LoginServlet extends HttpServlet {
         }
         
         AccountService as = new AccountService();
-        if (as.checkLogin(username, password) != null) {
+        
+        String path = getServletContext().getRealPath("/WEB-INF");
+        
+        if (as.checkLogin(username, password, path) != null) {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
             response.sendRedirect("home");
