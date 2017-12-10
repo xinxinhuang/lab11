@@ -10,6 +10,7 @@
     <body>
         <h1>Manage Users</h1>
         <h2>Users</h2>
+        <a href="login?logout">Log out</a>
         <p>${errorMessage}</p>
         <table>
             <tr>
@@ -26,6 +27,7 @@
                     <td>${user.username}</td>
                     <td>${user.firstname}</td>
                     <td>${user.lastname}</td>
+                    <td>${user.email}</td>
                     <td>${user.role.roleName}</td>
                     <td>
                         <ul>

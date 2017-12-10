@@ -42,4 +42,12 @@ public class UserService {
         user.setRole(role);
         return userDB.insert(user);
     }
+    
+    public int update(User user)throws Exception{
+        return userDB.update(user);
+    }
+    
+    public User getUUID(String uuid)throws Exception{
+        return userDB.getUUID(uuid);
+    }
 }

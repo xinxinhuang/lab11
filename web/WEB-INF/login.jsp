@@ -12,11 +12,12 @@
         <title>Login</title>
     </head>
     <body>
-        <h1>NotesKeepr Login</h1>
+        <h1>Email Login</h1>
         <form action="login" method="post">
             username: <input type="text" name="username"><br>
             password: <input type="password" name="password"><br>
             <input type="submit" value="Login">
+            <a href="Reset">Reset Password</a>
         </form>
         ${errormessage}
     </body>

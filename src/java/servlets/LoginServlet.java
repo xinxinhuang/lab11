@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
         if (as.checkLogin(username, password, path) != null) {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
-            response.sendRedirect("home");
+            response.sendRedirect("users");
         } else {
             request.setAttribute("errormessager", "invalid login");
             getServletContext().getRequestDispatcher("/WEB-INF/login.jsp/").forward(request, response);

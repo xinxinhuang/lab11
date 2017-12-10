@@ -36,8 +36,13 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")
     , @NamedQuery(name = "User.findByActive", query = "SELECT u FROM User u WHERE u.active = :active")
     , @NamedQuery(name = "User.findByFirstname", query = "SELECT u FROM User u WHERE u.firstname = :firstname")
-    , @NamedQuery(name = "User.findByLastname", query = "SELECT u FROM User u WHERE u.lastname = :lastname")})
+    , @NamedQuery(name = "User.findByLastname", query = "SELECT u FROM User u WHERE u.lastname = :lastname")
+    , @NamedQuery(name = "User.findByResetPasswordUUID", query="select u from User u where u.resetPasswordUUID = :resetPasswordUUID")})
+
 public class User implements Serializable {
+
+    @Column(name = "ResetPasswordUUID")
+    private String resetPasswordUUID;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -169,6 +174,14 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "domainmodel.User[ username=" + username + " ]";
+    }
+
+    public String getResetPasswordUUID() {
+        return resetPasswordUUID;
+    }
+
+    public void setResetPasswordUUID(String resetPasswordUUID) {
+        this.resetPasswordUUID = resetPasswordUUID;
     }
     
 }
